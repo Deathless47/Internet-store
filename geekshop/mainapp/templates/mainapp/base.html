@@ -1,24 +1,25 @@
 {% load static %}
 
-
-{{ now_time }}
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>{{ title }}</title>
-	<link rel="stylesheet" type="text/css" href={% static "css/style.css" %}>
-	<link rel="stylesheet" href={% static "css/font-awesome.css" %}> 
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	<link rel="stylesheet" href="{% static "fonts/font-awesome/css/font-awesome.css" %}">
 </head>
 <body>
 	<div class="container">
-		{% block header %}
+	{% block header %}
 
-        {% endblock %}
+	{% endblock%}
 
-        {% block content %}
 
-        {% endblock %}
-        
+	{% block content %}
+
+	{% endblock%}
+
+
 		<div class="clr"></div>
 	</div>	
 
