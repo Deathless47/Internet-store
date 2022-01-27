@@ -25,8 +25,8 @@ urlpatterns = [
     path("", mainapp.index, name="main"),
     path("contact/", mainapp.contact, name="contact"),
     path("products/", include("mainapp.urls", namespace="products")),
+    path("auth/", include("authapp.urls", namespace="auth")),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
