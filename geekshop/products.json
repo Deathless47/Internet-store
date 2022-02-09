@@ -1,17 +1,17 @@
 [
     {
-        "name": "Стул повышенного качества",
-        "description": "Не оторваться",
-        "image": "img/product-11.jpg"
+    "name": "стул1",
+    "description": "суперстул",
+    "image": "img/product-11.jpg"
     },
     {
-        "name": "Стул повышенного качества 2",
-        "description": "Супер стул",
-        "image": "img/product-21.jpg"
+    "name": "стул2",
+    "description": "суперстул",
+    "image": "img/product-21.jpg"
     },
     {
-        "name": "Стул повышенного качества 3",
-        "description": "Классно",
-        "image": "product-51.jpg"
+    "name": "стул3",
+    "description": "суперстул",
+    "image": "img/product-31.jpg"
     }
 ]
