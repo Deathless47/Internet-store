@@ -12,7 +12,8 @@ class ShopUserLoginForm(AuthenticationForm):
         super(ShopUserLoginForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
-
+            if field_name == 'password':
+                 field.widget = forms.HiddenInput()
 
 class ShopUserRegisterForm(UserCreationForm):
     class Meta:
@@ -23,7 +24,8 @@ class ShopUserRegisterForm(UserCreationForm):
         super(ShopUserRegisterForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
-    
+            if field_name == 'password':
+                 field.widget = forms.HiddenInput()
 
 class ShopUserEditForm(UserChangeForm):
     class Meta:
