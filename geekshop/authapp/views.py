@@ -1,7 +1,9 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render, HttpResponseRedirect
+from .models import ShopUser
 from .forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm
 from django.contrib import auth
 from django.urls import reverse
+from .utils import send_verify_mail
 
 def login(request):
     if request.method == 'POST':
@@ -32,12 +34,13 @@ def logout(request):
 
 def register(request):
     if request.method == 'POST':
-        register_form = ShopUserEditForm(request.POST, request.FILES)      
+        register_form = ShopUserRegisterForm(request.POST, request.FILES)      
         if register_form.is_valid():
-            register_form.save()
+            user = register_form.save()
+            send_verify_mail(user)
             return HttpResponseRedirect(reverse('auth:login'))
     else:
-        register_form = ShopUserEditForm()
+        register_form = ShopUserRegisterForm()
 
     return render(request, 'authapp/register.html', context={
         'title': 'Регистрация',
@@ -48,14 +51,24 @@ def register(request):
 
 def edit(request):
     if request.method == 'POST':
-        edit_form = ShopUserRegisterForm(request.POST, request.FILES,instance=request.user)      
+        edit_form = ShopUserEditForm(request.POST, request.FILES,instance=request.user)      
         if edit_form.is_valid():
             edit_form.save()
             return HttpResponseRedirect(reverse('main'))
     else:
-        edit_form = ShopUserRegisterForm(instance=request.user)
+        edit_form = ShopUserEditForm(instance=request.user)
 
     return render(request, 'authapp/edit.html', context={
         'title': 'Редактирование',
         'form': edit_form
     })
+
+
+def verify(request, email, activation_key):
+    user = get_object_or_404(ShopUser, email=email)
+    if user.activation_key == activation_key:
+        user.is_active = True
+        user.save()
+        auth.login(request, user)
+    return render(request, 'authapp/verification.html')
+
