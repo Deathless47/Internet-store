@@ -5,7 +5,7 @@ from mainapp.models import Product
 
 
 class BasketManager(models.Manager):
-    def count(self):
+    def total_quantity(self):
         basket_items = self.all()
         return sum(item.quantity for item in basket_items)
 
