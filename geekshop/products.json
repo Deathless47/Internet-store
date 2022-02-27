@@ -1,0 +1,17 @@
+[
+    {
+    "name": "стул1",
+    "description": "суперстул",
+    "image": "img/product-11.jpg"
+    },
+    {
+    "name": "стул2",
+    "description": "суперстул",
+    "image": "img/product-21.jpg"
+    },
+    {
+    "name": "стул3",
+    "description": "суперстул",
+    "image": "img/product-31.jpg"
+    }
+]

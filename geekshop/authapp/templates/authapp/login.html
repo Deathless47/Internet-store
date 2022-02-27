@@ -1,0 +1,13 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <form method="POST" url="{% url "auth:login" %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Войти">
+        <a class="button" href="{% url "social:begin" "github" %}">Войти через Github</a>
+    </form>
+
+{% endblock %}
