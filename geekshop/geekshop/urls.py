@@ -4,6 +4,7 @@ from django.conf import settings
 
 from mainapp import views as mainapp
 
+
 urlpatterns = [
     path("", include("social_django.urls", namespace="social")),
     path("admin/", include("adminapp.urls", namespace="admin")),
@@ -12,7 +13,7 @@ urlpatterns = [
     path("products/", include("mainapp.urls", namespace="products")),
     path("auth/", include("authapp.urls", namespace="auth")),
     path("basket/", include("basketapp.urls", namespace="basket")),
-    
+    path("orders/", include("ordersapp.urls", namespace="orders")),
 ]
 
 if settings.DEBUG:

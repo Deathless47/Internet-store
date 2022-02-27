@@ -16,10 +16,13 @@ def category_create(request):
     else:
         form = ProductCategoryAdminForm()
 
-    return render(request, 'adminapp/category/edit.html', context={
+    return render(
+        request, 
+        'adminapp/category/edit.html', 
+        context={
         'title': 'Создание категории',
-        'form': form
-    })
+        'form': form,
+        })
 
 
 @superuser_required()
@@ -46,7 +49,7 @@ def category_update(request, pk):
 
     return render(request, 'adminapp/category/edit.html', context={
         'title': 'Создание категории',
-        'form': form
+        'form': form,
     })
 
 

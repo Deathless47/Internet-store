@@ -8,8 +8,6 @@
             новый пользователь
         </a>
     </button>
-
-   
 	{% if page_obj.has_previous %}
 		Назад
 	{% endif %}
@@ -20,7 +18,6 @@
 		Вперед
 	{% endif %}
  
-
     {% for object in object_list %}
     <div 
         class="user_record {% if not object.is_active %}not_active{% endif %}">

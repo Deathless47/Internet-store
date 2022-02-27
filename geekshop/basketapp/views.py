@@ -16,7 +16,6 @@ def view(request):
 @login_required    
 def add(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    
     basket_items = Basket.objects.filter(user=request.user, product=product)
 
     if basket_items:
@@ -49,7 +48,6 @@ def edit(request, basket_item_id, quantity):
     else:
         basket_item.delete()
             
-     
     return render(request, 'basketapp/includes/inc_basket_list.html')
         
 

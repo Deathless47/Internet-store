@@ -25,8 +25,8 @@ def login(request):
 
     return render(request, 'authapp/login.html', context={
         'title': 'Вход',
-        'form': login_form
-    })
+        'form': login_form,
+    },)
 
 def logout(request):
     auth.logout(request)
@@ -46,8 +46,8 @@ def register(request):
 
     return render(request, 'authapp/register.html', context={
         'title': 'Регистрация',
-        'form': register_form
-    })
+        'form': register_form,
+    },)
 
 
 @transaction.atomic
@@ -67,8 +67,8 @@ def edit(request):
     return render(request, 'authapp/edit.html', context={
         'title': 'Редактирование',
         'form': edit_form,
-        'profile_form': profile_form
-    })
+        'profile_form': profile_form,
+    },)
 
 
 def verify(request, email, activation_key):

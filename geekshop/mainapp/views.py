@@ -27,7 +27,6 @@ def get_hot_product(queryset):
     return random.choice(queryset)
 
 
-
 def products(request):
     categories = ProductCategory.objects.all()
     products = Product.objects.all()
@@ -45,10 +44,9 @@ def products(request):
 
 def category(request, category_id, page=1):
     categories = ProductCategory.objects.all()
-    category = get_object_or_404(ProductCategory, pk=category_id)
+    category = get_object_or_404(ProductCategory, id=category_id)
     products = Product.objects.filter(category=category)
     hot_product = get_hot_product(products)
-    
     paginator = Paginator(products.exclude(pk=hot_product.pk), 3)
     try:
         products_page = paginator.page(page)
@@ -70,8 +68,8 @@ def category(request, category_id, page=1):
         },
     )
 
-def product(request, prpduct_id):
-    product = get_object_or_404(Product, pk=prpduct_id)
+def product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
     categories = ProductCategory.objects.all()
     
     return render(
