@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.vscode
+media
+geekshop/data.json
+geekshop/tmp/emails
+geekshop/credentials.json

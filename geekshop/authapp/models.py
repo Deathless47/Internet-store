@@ -4,8 +4,6 @@ from django.dispatch import receiver
 from django.utils.timezone import now
 from datetime import timedelta
 from django.db.models.signals import post_save
-from django.dispatch import receiver
-
 
 def get_activation_key_expiration_date():
     return now() + timedelta(hours=48)
