@@ -89,9 +89,7 @@ class OrderUpdate(OrderEditMixin, UpdateView):
     def form_valid(self, form):
         context = self.get_context_data()
         orderitems = context['orderitems']
-
         self.save_formset(form, orderitems, instance=self.object)
-
         return super(OrderUpdate, self).form_valid(form)
 
 
