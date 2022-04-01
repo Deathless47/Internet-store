@@ -2,6 +2,7 @@
 <ul class="menu">
     {% for link in menu_links %}
     <li>
+<<<<<<< HEAD
         <a href="{% url link.url %}"
             {% if request.resolver_match.view_name in link.active %} 
                 class="active"
@@ -49,13 +50,37 @@
         </a>
     </li>
     {% endif %}
+=======
+        <a href="{% url link.url %}" 
+        {% if request.resolver_match.url_name == link.url %}
+            class="active"
+        {% endif %}
+        >
+        {{ link.name }}
+        <a/>
+    </li>
+    {% endfor %}
+   
+    {% if user.is_authenticated %}
+    <li>
+        <a href="{% url 'auth:edit' %}">
+            {{ user.first_name|default:'Пользователь' }}          
+        </a>
+    </li>
+    {% endif %}  
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
     <li>
         {% if user.is_authenticated %}
         <a href="{% url 'auth:logout' %}">выйти</a>
         {% else %}
         <a href="{% url 'auth:login' %}">войти</a>
         {% endif %}
+<<<<<<< HEAD
         </li
     </ul>
+=======
+    </li>
+</ul>
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
 <a href="#" class="search"></a>
 <a href="#" class="basket"></a>

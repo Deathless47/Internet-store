@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import random
 
 
@@ -12,6 +13,19 @@ from django.core.paginator import Paginator, EmptyPage
 #     {"url": "products:all", "active": ["products:all", "products.category"], "name": "продукты"},
 #     {"url": "contact", "active": ["contact"], "name": "контакты"},
 # ]
+=======
+from django.shortcuts import render
+import json
+
+from .models import Product, ProductCategory
+
+
+MENU_LINKS = [
+    {"url": "main", "name": "домой"},
+    {"url": "products:products", "name": "продукты"},
+    {"url": "contact", "name": "контакты"},
+]
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
 
 
 def index(request):
@@ -19,16 +33,22 @@ def index(request):
     return render(
         request,
         "mainapp/index.html",
+<<<<<<< HEAD
         context={"title": "Главная", "products": products},
     )
 
 
 def get_hot_product(queryset):
     return random.choice(queryset)
+=======
+        context={"title": "Главная", "menu_links": MENU_LINKS, "products": products},
+    )
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
 
 
 def products(request):
     categories = ProductCategory.objects.all()
+<<<<<<< HEAD
     products = Product.objects.all()
     hot_product = get_hot_product(products)
     return render(
@@ -54,20 +74,31 @@ def category(request, category_id, page=1):
         products_page = paginator.page(paginator.num_pages)   
 
     
+=======
+    with open("./products.json", "r") as file:
+        products = json.load(file)
+
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
     return render(
         request,
         "mainapp/products.html",
         context={
             "title": "Продукты",
+<<<<<<< HEAD
             "hot_product": get_hot_product(products),
             "paginator": paginator,
             "page": products_page,
             "products": products_page,
             "category": category,
+=======
+            "products": products,
+            "menu_links": MENU_LINKS,
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
             "categories": categories,
         },
     )
 
+<<<<<<< HEAD
 def product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     categories = ProductCategory.objects.all()
@@ -81,6 +112,11 @@ def product(request, product_id):
             "categories": categories,
         },
     )
+=======
+
+def category(request, pk):
+    return products(request)
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
 
 
 def contact(request):
@@ -89,5 +125,9 @@ def contact(request):
         "mainapp/contact.html",
         context={
             "title": "Контакты",
+<<<<<<< HEAD
+=======
+            "menu_links": MENU_LINKS,
+>>>>>>> acd770417932e8546621d2347c271fd85985426b
         },
     )
