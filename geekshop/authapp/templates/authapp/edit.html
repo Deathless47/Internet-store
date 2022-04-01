@@ -1,9 +1,5 @@
 {% extends 'authapp/base.html' %}
-<<<<<<< HEAD
-=======
 {% load static %}
->>>>>>> acd770417932e8546621d2347c271fd85985426b
-
 
 {% block content %}
     {% if user.avatar %}
@@ -11,14 +7,8 @@
     <form method="POST" url="{% url "auth:edit" %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-<<<<<<< HEAD
         {{ profile_form.as_p}}
         <input type="submit" value="Сохранить">
     </form>
     {% endif %}
-=======
-        <input type="submit" value="Сохранить">
-    </form>
-
->>>>>>> acd770417932e8546621d2347c271fd85985426b
 {% endblock %}

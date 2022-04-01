@@ -3,11 +3,7 @@ from django.db import models
 
 
 class ProductCategory(models.Model):
-<<<<<<< HEAD
     name = models.CharField(verbose_name="имя", max_length=100, unique=True)
-=======
-    name = models.CharField(verbose_name="имя", max_length=100)
->>>>>>> acd770417932e8546621d2347c271fd85985426b
     description = models.TextField(verbose_name="описание", blank=True)
 
     def __str__(self):

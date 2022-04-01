@@ -10,14 +10,9 @@
     "image": "img/product-21.jpg"
     },
     {
-<<<<<<< HEAD
     "name": "стул3",
     "description": "суперстул",
     "image": "img/product-31.jpg"
-=======
-        "name": "Стул повышенного качества 3",
-        "description": "Классно",
-        "image": "img/product-31.jpg"
->>>>>>> acd770417932e8546621d2347c271fd85985426b
+
     }
 ]

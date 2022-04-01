@@ -10,11 +10,7 @@
 		<h3 class="green">тенденции</h3>
 		<h3 class="big"> удобные стулья</h3>
 		<p>Новый уровень комфорта. Отличные характеристики.</p>
-<<<<<<< HEAD
 		<a href="#" class="button-order">заказать <img src="/static/img/arrow.png" alt=""></a>
-=======
-		<a href="#" class="button-order">заказать <img src="{% static "img/arrow.png" %}" alt=""></a>
->>>>>>> acd770417932e8546621d2347c271fd85985426b
 	</div>	
 	<div class="navi">
 		<a href="#"></a><a href="#"></a><a href="#"></a>
@@ -22,16 +18,11 @@
 </div>
 {% endblock %}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> acd770417932e8546621d2347c271fd85985426b
 {% block content %}
 <div class="featured">
 	<div class="featured-menu">
 		<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
 	</div>
-<<<<<<< HEAD
 	<a class="explore" href="#">показать все <img src="/static/img/arrow.png" alt=""></a>
 	<div class="clearfix">
 	</div>
@@ -41,24 +32,3 @@
 </div>
 {% endblock %}
 		
-=======
-	<a class="explore" href="#">показать все <img src="{% static "img/arrow.png" %}" alt=""></a>
-	<div class="clearfix">
-	</div>
-	<div class="tab-content">
-		{% for product in products %}
-		<div class="block">
-			<a href="#"><img class="product-image" src="/media/{{ product.image }}" alt=""> 
-				<div class="text">
-					<img src="{% static "img/icon-hover.png" %}" alt="img">
-					<h4>{{ product.name }}</h4>
-					<p>{{ product.description }}</p>
-				</div> 
-			</a>
-		</div>
-		{% endfor %}
-		
-	</div>
-</div>
-{% endblock %}
->>>>>>> acd770417932e8546621d2347c271fd85985426b

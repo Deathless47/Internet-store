@@ -21,11 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
 SECRET_KEY = "django-insecure-&yrf9gq10(fpi=7@)!+_1%3e$@ed^7_$04qbb_l$ps+=utgro4"
-=======
-SECRET_KEY = "django-insecure-l%5)_s$zp7psw42q#q-=o1%6&cv1un8(8!miyyfai=&4i5heeg"
->>>>>>> acd770417932e8546621d2347c271fd85985426b
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,8 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-<<<<<<< HEAD
-
 
     "social_django",
 
@@ -52,10 +47,6 @@ INSTALLED_APPS = [
     "basketapp",
     "adminapp",
     "ordersapp",
-=======
-    "mainapp",
-    "authapp",
->>>>>>> acd770417932e8546621d2347c271fd85985426b
 ]
 
 MIDDLEWARE = [
@@ -73,11 +64,7 @@ ROOT_URLCONF = "geekshop.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-<<<<<<< HEAD
         "DIRS": ["templates"],
-=======
-        "DIRS": [],
->>>>>>> acd770417932e8546621d2347c271fd85985426b
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -85,12 +72,9 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-<<<<<<< HEAD
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
                 "mainapp.context_processors.menu_links",
-=======
->>>>>>> acd770417932e8546621d2347c271fd85985426b
             ],
         },
     },
@@ -147,10 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
-<<<<<<< HEAD
-=======
 
->>>>>>> acd770417932e8546621d2347c271fd85985426b
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -161,7 +142,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-<<<<<<< HEAD
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -205,9 +185,4 @@ EMAIL_FILE_PATH = 'tmp/emails/'
 DOMAIN_NAME = 'localhost'
 
 
-=======
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
 
-AUTH_USER_MODEL = "authapp.ShopUser"
->>>>>>> acd770417932e8546621d2347c271fd85985426b
