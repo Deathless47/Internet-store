@@ -9,6 +9,10 @@ class ProductCategory(models.Model):
     def __str__(self):
         return self.name
 
+class ProductManager(models.Manager):
+    def active_items(self):
+        return Product.objects.filter(is_active=True)
+
 
 class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
@@ -20,6 +24,10 @@ class Product(models.Model):
     description = description = models.TextField(verbose_name="описание", blank=True)
     image = models.ImageField(verbose_name="картинка", blank=True, upload_to="products")
     quantity = models.PositiveBigIntegerField(verbose_name="количество", default=0)
+    is_active = models.BigIntegerField(verbose_name="активный", default=True)
+
+    objects = ProductManager()
+
 
     def __str__(self):
         return self.name
