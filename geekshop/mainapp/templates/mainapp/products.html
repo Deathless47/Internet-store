@@ -13,13 +13,32 @@
 {% block content %}
 <div class="details">
 	{% include 'mainapp/includes/inc_categories_menu.html' %}
+	
 	{% if hot_product %}
 	<div class="details-products">
 		<div class="details-slider">
 			<div class="slider-product">
-				<img src="{{ hot_product.image.url }}">
+				<img src="{{ product.image.url }}">
 			</div>
 		</div>
+            <div class="slider-control">
+                <div class="block">
+                    <a href="#"><img src={% static 'img/controll.jpg' %} alt="">
+                        <div class="text"></div>
+                    </a>
+                </div>
+                <div class="block">
+                    <a href="#"><img src="/static/img/controll1.jpg" alt="">
+                        <div class="text"></div>
+                    </a>
+                </div>
+                <div class="block">
+                    <a href="#"><img src="/static/img/controll2.jpg" alt="">
+                        <div class="text"></div>
+                    </a>
+                </div>
+            </div> 
+	    </div>
 		
 		<div class="description">
 			<h3 class="big-bold">{{ hot_product.name }}</h3>

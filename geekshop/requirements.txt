@@ -9,6 +9,7 @@ distlib==0.3.4
 Django==3.2.4
 django-debug-toolbar==3.2.4
 django-debug-toolbar-template-profiler==2.0.2
+django-extensions==3.1.5
 filelock==3.6.0
 idna==3.3
 oauthlib==3.2.0

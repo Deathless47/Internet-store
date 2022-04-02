@@ -1,4 +1,5 @@
 from enum import unique
+from functools import lru_cache
 from django.db import models
 from django.conf import settings
 from mainapp.models import Product
@@ -13,10 +14,12 @@ class BasketQuerySet(models.query.QuerySet):
 
 
 class BasketManager(models.Manager):
+    # @lru_cache(maxsize=32)
     def total_quantity(self):
         basket_items = self.all()
         return sum(item.quantity for item in basket_items)
 
+    # @lru_cache(maxsize=32)
     def total_cost(self):
         basket_items = self.all()
         return sum(item.cost for item in basket_items)

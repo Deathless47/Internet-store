@@ -18,12 +18,12 @@ class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     name = models.CharField(verbose_name="имя", max_length=100)
     price = models.DecimalField(
-        verbose_name="цена", max_digits=7, decimal_places=2, default=0
+        verbose_name="цена", max_digits=7, decimal_places=2, default=0, db_index=True
     )
     color = models.PositiveBigIntegerField(verbose_name="цвет", default=0x000000)
     description = description = models.TextField(verbose_name="описание", blank=True)
     image = models.ImageField(verbose_name="картинка", blank=True, upload_to="products")
-    quantity = models.PositiveBigIntegerField(verbose_name="количество", default=0)
+    quantity = models.PositiveBigIntegerField(verbose_name="количество", default=0, db_index=True)
     is_active = models.BigIntegerField(verbose_name="активный", default=True)
 
     objects = ProductManager()
